@@ -15,7 +15,7 @@ Clone the repository into a folder of your choice. `npm install` will install lo
 In case you want to, dependencies needed as global can be installed by running the global install script for your OS from the `scripts` folder. You can run the bot without these, however having them global especially if you want to contribute is a good idea.
 
 ## Configuration
-Open `config.json` and replace the placeholder in the `token` field with your user account token (Or bot token, if you're doing this with some special purpose). The token in either case is sensitive and should hence not be exposed in any way.
+Open `config.example.json` and replace the placeholder in the `token` field with your user account token (Or bot token, if you're doing this with some special purpose). Save the file as `config.json`. The token in either case is sensitive and should hence not be exposed in any way.
 
 ### User Account
 If you want to use your own user account, you need to have 2-factor authentication enabled on your account. Then use the Electron inspector inside the Discord client to find the token from the local storage. The reason I'm being vague here is that if you know how to do what I just described, you understand the risks of it as well.
