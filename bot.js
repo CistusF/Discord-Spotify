@@ -16,18 +16,32 @@ import { spotifyListener } from './engine/spotify'
 try {
   require('./config.json')
 } catch (err) {
-  console.log(`Encountered issue while loading config:\n${err}`)
+  console.log(`ERROR: Encountered issue while loading config:\n${err}`)
 }
 
 try {
   bot.connect({ token: Config.token })
 } catch (err) {
-  console.log(`Encountered issue while logging in, invalid credentials?\n${err}`)
+  console.log(`ERROR: Encountered issue while logging in, invalid credentials?\n${err}`)
   process.exit() // Avoid API spam
 }
 
 bot.Dispatcher.on('GATEWAY_READY', _ => {
-  console.log('Successfully connected!')
+  console.log('INFO: Successfully connected!')
 })
 
-spotifyListener()
+spotifyListener(bot)
+
+bot.Dispatcher.on('MESSAGE_CREATE', m => {
+  if (m.message.author.id !== bot.User.id) {
+    // Omit
+  } else {
+    if (m.message.content === '>clearstatus') {
+      bot.User.setStatus('online', null)
+    }
+    if (m.message.content === '>exit') {
+      bot.User.setStatus('online', null)
+      process.exit()
+    }
+  }
+})

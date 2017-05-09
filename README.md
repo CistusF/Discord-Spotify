@@ -4,7 +4,7 @@ Simple Node.js bot for getting your current playing song in Spotify and mirrorin
 
 ## How it works
 
-The bot is mainly intended for use on your own user account as it features no commands. When started, the bot will log the current playing track in the background.
+The bot is mainly intended for use on your own user account. When started, the bot will log the current playing track in the background.
 
 It will set your Discord status to the current track with the format `♫ ${artistName} - ${trackName}`. When the track ends and changes, the bot will automatically update your playing status without any user input. Fire and forget, right?
 
@@ -20,6 +20,14 @@ And in your public profile:
 
 ![DiscordProfile](http://images.lwtechgaming.me/AQqft63.png)
 
+## Commands
+
+These commands cannot be executed by anyone else than the account the bot runs on.
+
+| Name | Description |
+| ---- | ----------- |
+| clearstatus | Debug tool to wipe your status if it is stuck. |
+| exit | Gracefully terminate the process and wipe the status on exit. |
 
 ## Install
 
@@ -42,6 +50,8 @@ If you want to use a bot account, create a bot account in the Discord Developers
 **Make sure Spotify is open and logged in before starting!**
 
 Open a command window in the bot's folder and run `npm start`. This will start the bot with regular Node.js. If you have installed the global deps, you can use `npm run start-es6`.
+
+When you want to exit, it's advised to type `>exit` in any channel where it is discreet to do so. This will make the bot clear your status before exiting and avoid you having the same status message stuck.
 
 **NOTE**: `npm run start-dev` is not intended for you, the end user. Unless you know what this does, don't use it.
 

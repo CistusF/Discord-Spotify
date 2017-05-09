@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "discord-spotify",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A simple system to show your current playing song in Spotify as your playing status in Discord.",
   "main": "bot.js",
   "scripts": {
