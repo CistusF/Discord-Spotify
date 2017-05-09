@@ -1,3 +1,11 @@
+/*
+Discord-Spotify
+Author: Linus Willner (LWTechGaming)
+License: GPL-3.0
+
+Copyright (c) 2017 Linus Willner.
+*/
+
 import Discordie from 'discordie'
 const bot = new Discordie({ autoReconnect: true })
 export { bot }

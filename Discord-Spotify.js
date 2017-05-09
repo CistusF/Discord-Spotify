@@ -13,7 +13,14 @@ var _spotify = require('./engine/spotify');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var bot = new _discordie2.default({ autoReconnect: true });
+var bot = new _discordie2.default({ autoReconnect: true }); /*
+                                                            Discord-Spotify
+                                                            Author: Linus Willner (LWTechGaming)
+                                                            License: GPL-3.0
+                                                            
+                                                            Copyright (c) 2017 Linus Willner.
+                                                            */
+
 exports.bot = bot;
 
 
