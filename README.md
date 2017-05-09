@@ -34,9 +34,7 @@ Open a command window in the bot's folder and run `npm start`. This will start t
 
 ## Support & chattery
 
-For any issues or suggestions, I'd prefer if you used [Issues](https://github.com/LWTechGaming/Discord-Spotify/issues) in this repo. If you want to contribute, feel free to fork and make a PR!
-
-If you have other questions, comments, issues or just want to talk to me, feel free to join my Discord! Click the banner below to get started.
+For any issues or suggestions, I'd prefer if you used [Issues](https://github.com/LWTechGaming/Discord-Spotify/issues) in this repo. If you want to contribute, feel free to fork and make a PR! If you have other questions, comments, issues or just want to talk to me, feel free to join my Discord. Click the banner below to get started.
 
 <p align="center">
   <a href="https://discord.gg/NaN39J8"><img src="https://discordapp.com/api/guilds/293097624246943744/widget.png?style=banner2" alt="Discord server"></a>
