@@ -1,0 +1,9 @@
+# NPM
+node_modules
+*.log
+
+# Visual Studio Code
+.vscode
+
+# Config file
+config.json

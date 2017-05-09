@@ -1,0 +1,38 @@
+{
+  "private": true,
+  "name": "discord-spotify",
+  "version": "1.0.0",
+  "description": "A simple system to show your current playing song in Spotify as your playing status in Discord.",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node Discord-Spotify.js",
+    "start-dev": "nodemon --exec babel-node bot.js",
+    "start-es6": "babel-node bot.js",
+    "test": "standard",
+    "build": "babel bot.js -o Discord-Spotify.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LWTechGaming/Discord-Spotify.git"
+  },
+  "author": "LWTechGaming",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/LWTechGaming/Discord-Spotify/issues"
+  },
+  "homepage": "https://github.com/LWTechGaming/Discord-Spotify#readme",
+  "dependencies": {
+    "discordie": "^0.11.0",
+    "spotify-web-helper": "^1.7.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^7.1.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^2.1.1",
+    "nodemon": "^1.11.0",
+    "standard": "^9.0.2"
+  }
+}
