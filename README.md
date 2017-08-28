@@ -8,7 +8,7 @@ The bot is mainly intended for use on your own user account. When started, the b
 
 It will set your Discord status to the current track with the format `♫ ${artistName} - ${trackName}`. When the track ends and changes, the bot will automatically update your playing status without any user input. Fire and forget, right?
 
-Due to how Discord functions, the status updates will not show in your client. You should rely on this working, if in doubt, ask a friend as they'll see it.
+Due to how Discord functions, the status updates will not show in your client. Additionally, if you keep changing tracks rapidly, you may encounter a ratelimit since your status is changing too quickly. Avoid this by not hopping tracks too quickly.
 
 ## Example
 
@@ -22,7 +22,7 @@ And in your public profile:
 
 ## Commands
 
-These commands cannot be executed by anyone else than the account the bot runs on.
+These commands cannot be executed by anyone else than the user on whose account the bot runs on.
 
 | Name | Description |
 | ---- | ----------- |
@@ -31,15 +31,20 @@ These commands cannot be executed by anyone else than the account the bot runs o
 
 ## Install
 
-Clone the repository into a folder of your choice. `npm install` will install local dependencies. If you want to use legacy Node, you don't need to do anything further for the installation part.
+Before you begin, install Node.js LTS or current from https://nodejs.org/en/download/.
 
-In case you want to, dependencies needed as global can be installed by running the global install script for your OS from the `scripts` folder. You can run the bot without these, however having them global especially if you want to contribute is a good idea.
+Clone this repository into a folder of your choice. Run `npm install` to install required dependencies. If you encounter warns during installation of dependencies, you can safely ignore them.
 
 ## Configuration
-Open `config.example.json` and replace the placeholder in the `token` field with your user account token (Or bot token, if you're doing this with some special purpose). Save the file as `config.json`. The token in either case is sensitive and should hence not be exposed in any way.
+Open `config.example.json` and replace the placeholder in the `token` field with your user account token (Or bot token, if you're doing this with some special purpose). Save the file as `config.json`. The token in either case is sensitive information and should hence not be exposed in any way.
+
+When you've saved the file, copy it into the `dist` folder as the bot will run from there.
 
 ### User Account
-If you want to use your own user account, you need to have 2-factor authentication enabled on your account. Then use the Electron inspector inside the Discord client to find the token from the local storage. The reason I'm being vague here is that if you know how to do what I just described, you understand the risks of it as well.
+
+If you want to use your own user account, you need to have 2-factor authentication enabled on your account. Then use the Electron inspector inside the Discord client to find the token from the local storage.
+
+Note: This is purposefully vague, since if you know how to get the token, I assume you understand the risks as well.
 
 ### Bot Account
 
@@ -47,13 +52,13 @@ If you want to use a bot account, create a bot account in the Discord Developers
 
 ## Running
 
-**Make sure Spotify is open and logged in before starting!**
+**Make sure Spotify is open and you are logged in to an account before starting!**
 
-Open a command window in the bot's folder and run `npm start`. This will start the bot with regular Node.js. If you have installed the global deps, you can use `npm run start-es6`.
+Open a command window in the bot's folder and run `npm start`. Or, if you're feeling lazy, run `start.bat`.
 
 When you want to exit, it's advised to type `>exit` in any channel where it is discreet to do so. This will make the bot clear your status before exiting and avoid you having the same status message stuck.
 
-**NOTE**: `npm run start-dev` is not intended for you, the end user. Unless you know what this does, don't use it.
+**Note**: You shouldn't run other NPM scripts than those instructed here, they're most likely for development use only.
 
 ## Support & chattery
 

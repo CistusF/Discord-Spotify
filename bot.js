@@ -7,41 +7,52 @@ Copyright (c) 2017 Linus Willner.
 */
 
 import Discordie from 'discordie'
-const bot = new Discordie({ autoReconnect: true })
-export { bot }
+import { spotifyListener } from './engine/spotify'
+import { log } from './engine/log'
 
 const Config = require('./config.json')
-import { spotifyListener } from './engine/spotify'
+const bot = new Discordie({ autoReconnect: true })
 
 try {
   require('./config.json')
 } catch (err) {
-  console.log(`ERROR: Encountered issue while loading config:\n${err}`)
+  if (err.message === `Cannot find module 'config.json'`) {
+    log.error('Config file not found, please make one and restart. (See README.md for instructions)')
+  } else {
+    log.error(`Encountered error while loading config file:\n` + err)
+  }
 }
 
-try {
-  bot.connect({ token: Config.token })
-} catch (err) {
-  console.log(`ERROR: Encountered issue while logging in, invalid credentials?\n${err}`)
-  process.exit() // Avoid API spam
-}
+bot.connect({ token: Config.token })
+
+bot.Dispatcher.on('REQUEST_AUTH_LOGIN_ERROR', _ => {
+  log.error('Encountered error while logging in. Exiting...')
+  process.exit()
+})
 
 bot.Dispatcher.on('GATEWAY_READY', _ => {
-  console.log('INFO: Successfully connected!')
+  log.info(`Successfully connected!\nUser: ${bot.User.username}#${bot.User.discriminator}\nID: ${bot.User.id}`)
 })
 
 spotifyListener(bot)
 
 bot.Dispatcher.on('MESSAGE_CREATE', m => {
-  if (m.message.author.id !== bot.User.id) {
-    // Omit
+  let msg = m.message
+  if (msg.author.id !== bot.User.id) {
+    // Only respond to the client user
   } else {
-    if (m.message.content === '>clearstatus') {
+    // Hardcoded
+    if (msg.content === '>clearstatus') {
+      msg.delete()
       bot.User.setStatus('online', null)
-    }
-    if (m.message.content === '>exit') {
+      log.info('Cleared status by command.')
+    } else if (msg.content === '>exit') {
+      msg.delete()
       bot.User.setStatus('online', null)
+      log.info('Status cleared. Exiting...')
       process.exit()
     }
   }
 })
+
+export { bot }

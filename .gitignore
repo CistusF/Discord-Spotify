@@ -7,3 +7,4 @@ node_modules
 
 # Config file
 config.json
+dist/config.json
