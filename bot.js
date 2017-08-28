@@ -44,11 +44,11 @@ bot.Dispatcher.on('MESSAGE_CREATE', m => {
     // Hardcoded
     if (msg.content === '>clearstatus') {
       msg.delete()
-      bot.User.setStatus('online', { type: 0, name: null })
+      bot.User.setStatus('online', null)
       log.info('Cleared status by command.')
     } else if (msg.content === '>exit') {
       msg.delete()
-      bot.User.setStatus('online', { type: 0, name: null })
+      bot.User.setStatus('online', null)
       log.info('Status cleared. Exiting...')
       process.exit()
     }

@@ -16,7 +16,7 @@ function spotifyListener (bot) {
     s.player.on('track-will-change', track => {
       let trackInfo = `${track.artist_resource.name} - ${track.track_resource.name}`
       log.info(`Track changed, current track: ${trackInfo}`)
-      bot.User.setStatus('online', { type: 0, name: `♫ ${trackInfo}` })
+      bot.User.setStatus('online', `♫ ${trackInfo}`)
       // TODO: Make this emoji customizable in the config
     })
   })

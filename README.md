@@ -8,7 +8,7 @@ The bot is mainly intended for use on your own user account. When started, the b
 
 It will set your Discord status to the current track with the format `♫ ${artistName} - ${trackName}`. When the track ends and changes, the bot will automatically update your playing status without any user input. Fire and forget, right?
 
-Due to how Discord functions, the status updates will not show in your client. You should rely on this working, if in doubt, ask a friend as they'll see it.
+Due to how Discord functions, the status updates will not show in your client. Additionally, if you keep changing tracks rapidly, you may encounter a ratelimit since your status is changing too quickly. Avoid this by not hopping tracks too quickly.
 
 ## Example
 
