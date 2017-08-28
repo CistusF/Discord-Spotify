@@ -29,7 +29,7 @@ function spotifyListener(bot) {
     s.player.on('track-will-change', function (track) {
       var trackInfo = track.artist_resource.name + ' - ' + track.track_resource.name;
       _log.log.info('Track changed, current track: ' + trackInfo);
-      bot.User.setStatus('online', { type: 0, name: '\u266B ' + trackInfo });
+      bot.User.setStatus('online', '\u266B ' + trackInfo);
       // TODO: Make this emoji customizable in the config
     });
   });

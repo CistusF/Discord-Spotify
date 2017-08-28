@@ -56,11 +56,11 @@ bot.Dispatcher.on('MESSAGE_CREATE', function (m) {
     // Hardcoded
     if (msg.content === '>clearstatus') {
       msg.delete();
-      bot.User.setStatus('online', { type: 0, name: null });
+      bot.User.setStatus('online', null);
       _log.log.info('Cleared status by command.');
     } else if (msg.content === '>exit') {
       msg.delete();
-      bot.User.setStatus('online', { type: 0, name: null });
+      bot.User.setStatus('online', null);
       _log.log.info('Status cleared. Exiting...');
       process.exit();
     }
