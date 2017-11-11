@@ -1,3 +1,5 @@
+**IMPORTANT: Native support for displaying your current Spotify track on Discord is coming soon along Rich Presence, so this program is mostly obsolete by now!**
+
 # Discord-Spotify
 
 Simple Node.js bot for getting your current playing song in Spotify and mirroring it to your Discord status.
